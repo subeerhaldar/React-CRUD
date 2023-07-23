@@ -16,7 +16,7 @@ function App() {
     <BrowserRouter>
       <div className="App container">
         <h3>
-          React Crud Operations
+          ReactJS Crud
         </h3>
 
         <nav>
@@ -35,6 +35,8 @@ function App() {
           <Route path="/Create" component={Create}></Route>
           <Route path="Read" element={<Read />}></Route>
           <Route path="/Read" component={Read}></Route>
+          <Route path="Update" element={<Update />}></Route>
+          <Route path="/Update" component={Update}></Route>
         </Routes>
       </div>
     </BrowserRouter>

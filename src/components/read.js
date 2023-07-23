@@ -2,15 +2,15 @@ import { Table } from "semantic-ui-react";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { Button } from "react-bootstrap";
+//import { Button } from "react-bootstrap";
 import Update from "./update";
 import {
-    BrowserRouter,
-    Routes,
-    Route,
-    Switch,
-    NavLink,
-  } from "react-router-dom";
+  BrowserRouter,
+  Routes,
+  Route,
+  Switch,
+  NavLink,
+} from "react-router-dom";
 
 export default function Read() {
   const setData = (data) => {
@@ -43,6 +43,7 @@ export default function Read() {
         setAPIData(getData.data);
       });
   };
+
   return (
     <div>
       <Table singleLine>
@@ -65,15 +66,20 @@ export default function Read() {
                 <Table.Cell>
                   {data.checkbox ? "Checked" : "Unchecked"}
                 </Table.Cell>
-                <Link to="/update">  
-                {/* path="/Update" component={Update} element={<Update />} */}
-                  <Table.Cell>
-                    <Button onClick={() => setData(data)}>Update</Button>
-                  </Table.Cell>
-                </Link>
                 <Table.Cell>
-              <Button variant="danger" onClick={() => onDelete(data.id)}>Delete</Button>
-            </Table.Cell>
+                  <Link
+                    to="/Update"
+                    className="btn btn-primary"
+                    onClick={() => setData(data)}
+                  >
+                    Update
+                  </Link>
+                </Table.Cell>
+                <Table.Cell>
+                  <Link variant="danger" onClick={() => onDelete(data.id)}>
+                    Delete
+                  </Link>
+                </Table.Cell>
               </Table.Row>
             );
           })}
