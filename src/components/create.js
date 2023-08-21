@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import { Button, Checkbox, Form } from 'semantic-ui-react'
+import { Button, Checkbox, Form } from 'semantic-ui-react';
+import { useNavigate } from 'react-router-dom';
 
 export default function Create() {
+    const navigate = useNavigate();
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
     const [checkbox, setCheckbox] = useState(false);
@@ -11,10 +13,12 @@ export default function Create() {
             firstName,
             lastName,
             checkbox
+        }).then(() => {
+            navigate('/read');
         })
     }
     return (
-        <div>
+        <div className="create-div">
             <Form className="create-form">
                 <Form.Field>
                     <label>First Name</label>

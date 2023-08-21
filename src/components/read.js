@@ -2,15 +2,6 @@ import { Table } from "semantic-ui-react";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-//import { Button } from "react-bootstrap";
-import Update from "./update";
-import {
-  BrowserRouter,
-  Routes,
-  Route,
-  Switch,
-  NavLink,
-} from "react-router-dom";
 
 export default function Read() {
   const setData = (data) => {
@@ -45,7 +36,7 @@ export default function Read() {
   };
 
   return (
-    <div>
+    <div className="list-div">
       <Table singleLine>
         <Table.Header>
           <Table.Row>
